@@ -21,6 +21,8 @@ SET time_zone = "+00:00";
 --
 -- База данных: `wd04-filmoteka-mishin`
 --
+CREATE DATABASE IF NOT EXISTS `wd04-filmoteka-mishin` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `wd04-filmoteka-mishin`;
 
 -- --------------------------------------------------------
 
