@@ -84,14 +84,15 @@ function film_update($link, $title, $genre, $year, $id, $description){
 			$errors[] = 'File upload failed';
 		}
 
-		require_once( ROOT . "/functions/image_resize_imagick.php");
+		// require_once( ROOT . "/functions/image_resize_imagick.php");
+        require_once( ROOT . "/functions/image_resize.php");
 		$target_file =  $photoFolderLocation . $db_file_name;
 		$resized_file = $photoFolderLocationMin . $db_file_name;
 		$wmax = 137;
 		$hmax = 200;
-		$img = createThumbnail($target_file, $wmax, $hmax);
-		$img->writeImage($resized_file);
-
+		/* $img = createThumbnail($target_file, $wmax, $hmax);
+		$img->writeImage($resized_file); */
+        $img = make_thumb($target_file, $resized_file, $wmax, $hmax);
 	}
 
 	$query = "	UPDATE films 
@@ -101,6 +102,7 @@ function film_update($link, $title, $genre, $year, $id, $description){
 					description = '". mysqli_real_escape_string($link, $description) ."', 
 					photo = '". mysqli_real_escape_string($link, $db_file_name) ."' 
 					WHERE id = ".mysqli_real_escape_string($link, $id)." LIMIT 1";
+    // echo $query;
 
 	if ( mysqli_query($link, $query) ) {
 		$result = true;

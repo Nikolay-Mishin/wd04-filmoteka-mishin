@@ -1,7 +1,5 @@
 <?php 
-
 function createThumbnail($imagePath, $cropWidth = 100, $cropHeight = 100){
-
 	/* Чтение изображения */
 	$imagick = new Imagick($imagePath);
 	$width = $imagick->getImageWidth();
@@ -15,7 +13,6 @@ function createThumbnail($imagePath, $cropWidth = 100, $cropHeight = 100){
 	// }
 
 	$imagick->thumbnailImage($cropWidth, $cropHeight);
-
 
 	// Определяем размеры полученной миниатюры
 	$width = $imagick->getImageWidth();
@@ -40,7 +37,6 @@ function createThumbnail($imagePath, $cropWidth = 100, $cropHeight = 100){
 }
 
 /* 
-
 Usage Example
 
 // Define full path to the image
@@ -53,7 +49,5 @@ $imagePath = ROOT . 'flat.jpg';
 $img = createThumbnail($imagePath);
 header('Content-type: image/jpeg');
 echo $img;
-
 */
-
 ?>
