@@ -15,7 +15,7 @@ function films_all($link) {
 // Getting All films from DB
 function film_new($link, $title, $genre, $year, $description) {
     $db_file_name = get_film_photo($link);
-    echo "db_file_name = $db_file_name";
+    echo 'db_file_name = ' . $db_file_name;
 
     // Запись данных в БД
     $query = "INSERT INTO films (title, genre, year, description, photo) VALUES (
