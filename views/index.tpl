@@ -4,13 +4,19 @@
 	<div class="card mb-20">
 		<!-- row -->
 		<div class="row">
-			<?php if ( $film['photo'] != '') { ?>
+			<?php if ($film['photo'] != '') { ?>
 				<!-- col-4 -->
 				<div class="col-auto">
 					<img height="200" src="<?=HOST?>data/films/min/<?=$film['photo']?>" alt="<?=$film['title']?>">
 				</div>	
 				<!-- col-4 -->
-			<?php } ?>
+			<?php } else { ?>
+                <!-- col-4 -->
+				<div class="col-auto">
+					<img height="200" src="<?=HOST?>data/films/no_photo.jpg?>" alt="<?=$film['title']?>">
+				</div>	
+				<!-- col-4 -->
+            <?php } ?>
 			
 			<!-- //col-8 -->
 			<div class="col">
@@ -19,8 +25,8 @@
 					<div class="buttons">
 					
 					<?php  
-						if ( isset($_SESSION['user']) ) {
-							if ( $_SESSION['user'] == 'admin' ) { 
+						if (isset($_SESSION['user'])) {
+							if ($_SESSION['user'] == 'admin') { 
 					?>
 							<a href="edit.php?id=<?=$film['id']?>" class="button button--edit">Редактировать</a>
 							<a href="?action=delete&id=<?=$film['id']?>" class="button button--delete">Удалить</a>
