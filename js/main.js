@@ -22,4 +22,7 @@ $(document).ready(function() {
 	});
 
 	$(".left-panel").customScrollbar({preventDefaultScroll: true});
+
+    /* var input = $('input')[3];
+    $(input).on('change', () => console.log($('input')[3].files[0])); */
 });

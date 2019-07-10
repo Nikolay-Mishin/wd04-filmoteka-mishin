@@ -3,7 +3,7 @@
 <div class="panel-holder mt-30 mb-100">
 	<div class="title-4 mt-0">Добавить фильм</div>
 
-	<form action="new.php" method="POST">
+	<form enctype="multipart/form-data" action="new.php" method="POST">
 		<?php 
 			if (!empty($errors)) {
 				foreach ($errors as $key => $value) {

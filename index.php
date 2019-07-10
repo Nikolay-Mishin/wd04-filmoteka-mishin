@@ -1,4 +1,4 @@
-<?php 
+<?php
 require('config.php');
 require('database.php');
 $link = db_connect();
