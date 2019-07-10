@@ -18,7 +18,7 @@ function film_new($link, $title, $genre, $year, $description) {
     echo $db_file_name;
 
     // Запись данных в БД
-    /* $query = "INSERT INTO films (title, genre, year, description, photo) VALUES (
+    $query = "INSERT INTO films (title, genre, year, description, photo) VALUES (
         '". mysqli_real_escape_string($link, $title) ."', 
         '". mysqli_real_escape_string($link, $genre) ."', 
         '". mysqli_real_escape_string($link, $year) ."',
@@ -33,7 +33,7 @@ function film_new($link, $title, $genre, $year, $description) {
         $result = false;
     }
 
-    return $result; */
+    return $result;
 }
 
 function get_film($link, $id) {
