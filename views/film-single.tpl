@@ -4,9 +4,15 @@
 	<!-- row -->
 	<div class="row">
 		<!-- col -->
-		<div class="col">
-			<img width="500" src="<?=HOST?>data/films/full/<?=$film['photo']?>" alt="<?=$film['title']?>">
-		</div>
+        <?php if ($film['photo'] != '') { ?>
+            <div class="col">
+                <img width="500" src="<?=HOST?>data/films/full/<?=$film['photo']?>" alt="<?=$film['title']?>">
+            </div>
+        <?php } else { ?>
+            <div class="col">
+                <img width="500" src="<?=HOST?>data/films/no_photo.jpg?>" alt="<?=$film['title']?>">
+            </div>
+        <?php } ?>
 		<!-- // col -->
 		<!-- col -->
 		<div class="col">

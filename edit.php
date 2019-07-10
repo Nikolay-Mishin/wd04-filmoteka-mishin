@@ -7,8 +7,7 @@ require('models/films.php');
 require('functions/login-functions.php');
 
 // UPDATE film data in DB
-if ( array_key_exists('update-film', $_POST) ) {
-	
+if (array_key_exists('update-film', $_POST)) {
 	// Обработка ошибок
 	if ($_POST['title'] == '') {
 		$errors[] = "<p>Необходимо ввести название фильма!</p>";
@@ -20,9 +19,14 @@ if ( array_key_exists('update-film', $_POST) ) {
 		$errors[] = "<p>Необходимо ввести год фильма!</p>";
 	}
 
-	if (empty($errors) ) {
+	if (empty($errors)) {
+        /* echo "<pre>";
+        echo '$_POST<br>';
+        print_r($_POST);
+        echo "</pre>"; */
+        
 		$result = film_update($link, $_POST['title'], $_POST['genre'], $_POST['year'], $_GET['id'], $_POST['description']);
-		if ( $result ) {
+		if ($result) {
 			$resultSuccess = "<p>Фильм был успешно обновлен!</p>";
 		}
         else { 

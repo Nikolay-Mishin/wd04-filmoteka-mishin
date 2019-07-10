@@ -18,13 +18,11 @@ if (isset($_POST['enter'])) {
 
 	if ($_POST['login'] == $user['user_name']) {
 		if ($_POST['password'] == $user['user_password']) {
-
 			$_SESSION['user'] = $user['user_name'];
 			// header('Location: ' . HOST . 'index.php');
             header('Location: ' . 'index.php');
 		}
 	}
-
 }
 
 include('views/head.tpl');

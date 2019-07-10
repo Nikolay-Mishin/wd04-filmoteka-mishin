@@ -1,4 +1,4 @@
-<?php 
+<?php
 require('config.php');
 require('database.php');
 $link = db_connect();
@@ -20,6 +20,11 @@ if (array_key_exists('add-film', $_POST)) {
 
 	// Если ошибок нет - сохраняем фильм
 	if (empty($errors)) {
+        /* echo "<pre>";
+        echo '$_POST<br>';
+        print_r($_POST);
+        echo "</pre>"; */
+
 		$result = film_new($link, $_POST['title'], $_POST['genre'], $_POST['year'], $_POST['description']);
 		if ($result) {
 			$resultSuccess = "<p>Фильм был успешно добавлен!</p>";

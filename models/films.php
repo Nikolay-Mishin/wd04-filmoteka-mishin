@@ -1,4 +1,4 @@
-<?php 
+<?php
 // Getting All films from DB
 function films_all($link) {
 	$query = "SELECT * FROM films";
@@ -15,7 +15,7 @@ function films_all($link) {
 // Getting All films from DB
 function film_new($link, $title, $genre, $year, $description) {
     $db_file_name = get_film_photo($link);
-    echo "db_file_name = $db_file_name";
+    // echo 'db_file_name = ' . $db_file_name;
 
     // Запись данных в БД
     $query = "INSERT INTO films (title, genre, year, description, photo) VALUES (
@@ -81,11 +81,12 @@ function film_delete($link, $id) {
 }
 
 function get_film_photo($link, $id = 0) {
-    $db_file_name = '';
-
-    echo "<pre>";
+    /* echo "<pre>";
+    echo '$_FILES<br>';
 	print_r($_FILES);
-	echo "</pre>";
+	echo "</pre>"; */
+
+    $db_file_name = '';
 
 	if (isset($_FILES['photo']['name']) && $_FILES['photo']['tmp_name'] != "") {
 		$fileName = $_FILES["photo"]["name"];
