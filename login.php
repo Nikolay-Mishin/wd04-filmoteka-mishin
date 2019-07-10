@@ -5,7 +5,7 @@ $link = db_connect();
 
 require('functions/login-functions.php');
 
-if ( isset($_POST['enter']) ) {
+if (isset($_POST['enter'])) {
 	$userName = 'admin';
 	$userPassword = '123456';
 
@@ -16,8 +16,8 @@ if ( isset($_POST['enter']) ) {
         echo "</pre>"; 
     */
 
-	if ( $_POST['login'] == $user['user_name'] ) {
-		if ( $_POST['password'] == $user['user_password'] ) {
+	if ($_POST['login'] == $user['user_name']) {
+		if ($_POST['password'] == $user['user_password']) {
 
 			$_SESSION['user'] = $user['user_name'];
 			// header('Location: ' . HOST . 'index.php');

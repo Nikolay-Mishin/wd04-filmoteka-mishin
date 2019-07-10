@@ -7,13 +7,13 @@ require('models/films.php');
 require('functions/login-functions.php');
 
 // Удаление фильма
-if ( @$_GET['action'] == 'delete') {
-
+if (@$_GET['action'] == 'delete') {
 	$reslut = film_delete($link, $_GET['id']);
 
-	if ( $reslut ) {
+	if ($reslut) {
 		$resultInfo = "<p>Фильм был удален!</p>";
-	} else {
+	}
+    else {
 		$resultError = "<p>Что то пошло не так.</p>";
 	}
 }

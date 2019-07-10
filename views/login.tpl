@@ -8,6 +8,4 @@
 	<input class="input" type="password" placeholder="" name="password"/>
 	
 	<input type="submit" class="button" value="Войти на сайт" name="enter">
-
 </form>
-

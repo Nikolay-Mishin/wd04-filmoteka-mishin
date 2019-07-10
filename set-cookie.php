@@ -1,7 +1,7 @@
 <?php 
 require('config.php');
 
-if ( isset($_POST['user-submit']) ){
+if (isset($_POST['user-submit'])) {
 	$userName = $_POST['user-name'];
 	$userCity = $_POST['user-city'];
 	$exrire =  time() + 60*60*24*30;

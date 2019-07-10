@@ -20,7 +20,8 @@ function make_thumb($src, $dest, $desired_width = 100, $desired_height = 100) {
     else if ($resizedWithd > $desired_width) {
         imagecopyresampled($canvas, $source_image, $centralRszX, 0, 0, 0, $resizedWithd, $desired_height, $src_width, $src_height);
         $result = imagejpeg($canvas, $dest);
-    } else {
+    }
+    else {
         echo "Что-то пошло не так :(";
     }
 

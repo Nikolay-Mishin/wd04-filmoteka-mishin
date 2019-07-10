@@ -2,9 +2,8 @@
 
 <div class="panel-holder mt-30 mb-100">
 	<form enctype="multipart/form-data" action="edit.php?id=<?=$film['id']?>" method="POST">
-
 		<?php 
-			if ( !empty($errors)) {
+			if (!empty($errors)) {
 				foreach ($errors as $key => $value) {
 					echo "<div class='error'>$value</div>";
 				}
@@ -25,10 +24,15 @@
 		</div>
 		<textarea class="textarea mb-20" name="description" placeholder="Введите описание фильма"><?=$film['description']?></textarea>
 		<div class="mb-20">
-			<input type="file" name="photo" /> 
+			<input type="file" name="photo" />
 		</div>
+        <? if ($film['photo'] != ''): ?>
+            <div class="mb-20">
+                <img width="137" src="<?=HOST?>data/films/min/<?=$film['photo']?>" alt="<?=$film['title']?>">
+                <span><?=$film['photo']?></span>
+            </div>
+        <? endif; ?>
 		<input type="submit" class="button" value="Обновить" name="update-film">
 	</form>
-
 </div>
 </div>
